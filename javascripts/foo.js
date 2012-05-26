@@ -1,8 +1,10 @@
-var module = (function($, exports) {
+var jqModuleToLoad = (function($, exports) {
     
-    var foo = function() {
+    var foo = function(content) {
+        var c = content || 'foo';
+        
         return {
-            hello: function() { $('#content').append('<p>foo</p>'); }
+            hello: function() { $('#content').append('<p>'+c+'</p>'); }
         }
     }
     

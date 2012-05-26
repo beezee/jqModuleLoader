@@ -70,10 +70,10 @@
 	<script src="javascripts/jqModuleLoader.js"></script>
 	<script type="text/javascript">
 	
-	$.jqLoadModule({ foo: 'javascripts/foo.js', bar: 'javascripts/bar.js'}, function(modules) {
+	$.jqLoadModule({ foo: 'javascripts/foo.js', bar: {script:'javascripts/bar.js', args:[{prefix:'pre ', suffix:' post'}]}}, function(modules) {
 		modules.foo.hello();
 		modules.bar.hello();
-	});
+	}, ['baz']);
 
 	</script>
 

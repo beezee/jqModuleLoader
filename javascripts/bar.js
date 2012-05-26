@@ -1,8 +1,9 @@
-var module = (function() {
-    var bar = function() {
+var jqModuleToLoad = (function() {
+    var bar = function(bookends) {
+        var content = 'bar', pre = bookends.prefix, suf = bookends.suffix;
         return {
             hello: function() {
-                $('#content').append('<p>bar</p>');
+                $('#content').append('<p>'+pre+content+suf+'</p>');
             }
         };
     }
