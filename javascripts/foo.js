@@ -1,4 +1,4 @@
-var jqModuleToLoad = (function($, exports) {
+$.jqModules.push((function($, exports) {
     
     var foo = function(content) {
         var c = content || 'foo';
@@ -10,4 +10,4 @@ var jqModuleToLoad = (function($, exports) {
     
     return foo;
     
-}(jQuery, window));
+}(jQuery, window)));

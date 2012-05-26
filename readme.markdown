@@ -2,7 +2,7 @@
 
 Module files should be structured as follows
 
-    var jqModuleToLoad = (function() {
+    $.jqModules.push((function() {
     
         var functionThatReturnsNameSpacedCode = function(acceptedArg, anotherAcceptedArg) {
             
@@ -20,7 +20,7 @@ Module files should be structured as follows
         }
         
         return functionThatReturnsNameSpacedCode;
-    }());
+    }()));
     
 The loader will unset the global jqModuleToLoad variable after moving it to the namespace provided in your call to the plugin.
 

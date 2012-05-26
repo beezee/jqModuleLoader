@@ -1,4 +1,4 @@
-var jqModuleToLoad = (function() {
+$.jqModules.push((function() {
     var bar = function(bookends) {
         var content = 'bar', pre = bookends.prefix, suf = bookends.suffix;
         return {
@@ -9,4 +9,4 @@ var jqModuleToLoad = (function() {
     }
     
     return bar;
-}());
+}()));

@@ -1,4 +1,5 @@
 (function($) {
+    $.jqModules = [];
     $.jqLoadModule = function(scripts, callback, args) {
         var keys = [], urls = [], scriptArgs = [], depth = 0, modules = {};
         $.each(scripts, function(k, v) {
@@ -9,8 +10,9 @@
                 scriptArgs.push(_args);
         });
         function cb() {
-                if (typeof jqModuleToLoad === 'function') modules[keys[depth]] = jqModuleToLoad.apply(jqModuleToLoad, scriptArgs[depth]);
-                if (jqModuleToLoad) jqModuleToLoad = null;
+                var i = $.jqModules.length - 1;
+                if (typeof $.jqModules[i] === 'function') modules[keys[depth]] = $.jqModules[i].apply($.jqModules[i], scriptArgs[depth]);
+                if ($.jqModules[i]) delete $.jqModules[i];
                 depth++;
                 if (depth < urls.length) $.getScript(urls[depth], cb);
                 else callback(modules);
