@@ -1,0 +1,1 @@
+See inline js at bottom of index.html for basic usage.
