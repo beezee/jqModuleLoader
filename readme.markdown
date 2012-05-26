@@ -3,9 +3,10 @@
 Module files should be structured as follows
 
     var jqModuleToLoad = (function() {
-        var functionToReturnNameSpacedCode = function() {
+    
+        var functionThatReturnsNameSpacedCode = function(acceptedArg, anotherAcceptedArg) {
             
-            var privatePropertyHere;
+            var privatePropertyHere = acceptedArg;
             
             function privateMethodHere() { //do stuff }
             
@@ -28,7 +29,6 @@ in the third parameter psased to $.jqLoadModules. The bar module constructor wil
 prefix and suffix, as defined in the args property of the bar property of the first parameter passed to $.jqLoadModule.
 
 Note that the script property is required in defining a module when passing module specific argument overrides as in the bar definition in the below
-example.
 
     $.jqLoadModule({ foo: 'javascripts/foo.js', bar: {script:'javascripts/bar.js', args:[{prefix:'pre ', suffix:' post'}]}}, function(modules) {
             modules.foo.hello();
