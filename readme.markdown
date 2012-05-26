@@ -29,6 +29,7 @@ in the third parameter passed to $.jqLoadModule. The bar module constructor will
 prefix and suffix, as defined in the args property of the bar property of the first parameter passed to $.jqLoadModule.
 
 Note that the script property is required in defining a module when passing module specific argument overrides as in the bar definition in the below
+example.
 
     $.jqLoadModule({ foo: 'javascripts/foo.js', bar: {script:'javascripts/bar.js', args:[{prefix:'pre ', suffix:' post'}]}}, function(modules) {
             modules.foo.hello();
