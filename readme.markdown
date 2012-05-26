@@ -18,6 +18,8 @@ Module files should be structured as follows
                 //etc
             }
         }
+        
+        return functionThatReturnsNameSpacedCode;
     }());
     
 The loader will unset the global jqModuleToLoad variable after moving it to the namespace provided in your call to the plugin.
