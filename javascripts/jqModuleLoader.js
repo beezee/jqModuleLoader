@@ -15,7 +15,7 @@
                 if ($.jqModules[i]) delete $.jqModules[i];
                 depth++;
                 if (depth < urls.length) $.getScript(urls[depth], cb);
-                else callback(modules);
+                else { callback(modules); delete $.jqModules }
         }
         $.getScript(urls[depth], cb);
     }
